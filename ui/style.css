@@ -1,4 +1,4 @@
-#heading
+h1#heading
 {
 	position: absolute;
 	font-family: purisa;
@@ -12,7 +12,7 @@
 
 }
 
-#tagline
+h3#tagline
 {
 	position: absolute;
 	font-family: pursia;
@@ -24,113 +24,11 @@
 	transition: 10s;
 }
 
-#nav
+div#nav
 {
 	position: absolute;
 	bottom: 8%;
 	left: 35%;
 
-
-}
-#cover1
-{
-	position: absolute;
-	height: 10%;
-	width: 99%;
-	background-color: black;
-	
-}
-
-a
-{
-	position: relative;
-	text-decoration: none;
-	top: 28%;
-	left: 25%;
-	background-color: white;
-	font-size: large;
-	color: black;
-	border-radius: 17%;
-	padding: 0.8rem 0.8rem 0.8rem 0.8rem;
-}
-
-a:HOVER
-{
-	background-color: black;
-	color: white;
-	font-size: xx-large;
-
-}
-
-
-para
-{
-	position: absolute;
-	font-family: purisa;
-	font-style: italic;
-	font-size: xx-large;
-	font-weight: bold;
-	color: white;
-	bottom: -28%;
-	left: 5%;
-
-}
-
-panel1
-{
-	background-color: black;
-	position: absolute;
-	height: 35%;
-	width: 16%;
-	top: 23%;
-	left: 2%;
-}
-
-panel2
-{
-	background-color: black;
-	position: absolute;
-	height: 35%;
-	width: 16%;
-	top: 23%;
-	left: 21%;
-}
-
-panel3
-{
-	background-color: black;
-	position: absolute;
-	height: 35%;
-	width: 16%;
-	top: 23%;
-	left: 40%;
-}
-
-panel4
-{
-	background-color: black;
-	position: absolute;
-	height: 35%;
-	width: 16%;
-	top: 23%;
-	left: 59%;
-}
-
-panel5
-{
-	background-color: black;
-	position: absolute;
-	height: 35%;
-	width: 16%;
-	top: 23%;
-	left: 78%;
-}cpara
-{
-	color: white;
-	position: absolute;
-	font-family: purisa;
-	font-size: small;
-	font-weight: bold;
-	font-style: italic;
 
 }
