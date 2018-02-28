@@ -1,4 +1,4 @@
-h1#heading
+#heading
 {
 	position: absolute;
 	font-family: purisa;
@@ -11,8 +11,7 @@ h1#heading
 	transition: 10s;
 
 }
-
-h3#tagline
+#tagline
 {
 	position: absolute;
 	font-family: pursia;
@@ -24,7 +23,7 @@ h3#tagline
 	transition: 10s;
 }
 
-div#nav
+#nav
 {
 	position: absolute;
 	bottom: 8%;
