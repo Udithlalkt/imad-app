@@ -13,202 +13,104 @@
 <style>
     
     
-    body{
-	background:white;
-	height:700px;
-	margin:0px;
-	padding:0px;
-	
-}
-.base{
-	position:absolute;
-	width:100%;
-	top:0px;
-	left:0px;
-	color:gray;
+   @import "compass/css3";
 
-}
-#logo{
-	
-	margin-top:20px;
-	
-	height:38px;
-	width:500px;
+// Variables
+$dark: #282828;
+$pink: #fc2161;
+$pink-d: darken($pink, 15%);
+$green: #77BD42;
+$green-d: darken($green, 15%);
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400);
+
+
+// Get to business
+body {
+  background-color: #777;
+  background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAQAAABuBnYAAAAAU0lEQVQIHQXBwRGDIBAAwO2/AMcCDHAcPjIRxjJ8Je1kl1uqUgphsWu6w0sIG6npLpcUBql4e/wsVRKabrkNTacIYbMrwsF06rqUhsnXVKVT+Hj+Ue4rPSONk4kAAAAASUVORK5CYII=);
+  padding-top: 80px;
+  text-align: center;
 }
 
-#info1{
-	width:500px;
-	margin-top:25px;
-	font-family: 'Open Sans', sans-serif;
-	font-size:38px;
-	color:#555557;
-	
-}
-#info2{
-	width:500px;
-	margin-top:17px;
-	font-family: 'Open Sans', sans-serif;
-	font-size:18px;
-	font-weight:bold;
-	color:#555557;
-	
-}
-#form1{
-	margin-top:17px;
-	width:355px;
-	height:280px;
-    padding-top:40px;
-	background:#f7f7f7;
-	box-shadow: 0px 1px 1px 1px #c6c1c1;
-
-}
-#form-img{
-	
-	width:99px;
-	height:99px;
-}
-#mailbox{
-	width:270px;
-	height:42px;
-	border-radius:5px 5px 5px 5px;
-	background:white;
-	
-	font-size:18px;
-	margin-top:20px;
-	border-width: 0px;
-	border-style:solid;
-	border-color: blue;
-}
-#button2{
-	width:270px;
-	height:35px;
-	
-	margin-top:10px;
-	background:#498af2;
-	font-family:verdana;
-	font-size:14px;
-	color:white;
-	border-radius:5px 5px 5px 5px;
-	border-width: 1px;
-	border-style:solid;
-	border-color: gray;
-	cursor:pointer;
-	outline:none;
-	
-}
-#info3{
-	float:right;
-	margin-top:10px;
-	font-size:13px;
-	font-family: 'Open Sans', sans-serif;
-	color:#498af2;
-	padding-right:42px;
-	font-weight:bold;
-}
-#info3 a{
-	color:#498af2;
-	text-decoration:none;
-}
-#info4{
-	margin-top:25px;
-	font-size:13px;
-	font-family: 'Open Sans', sans-serif;
-	
-	font-weight:bold;
-}
-#info4 a{
-	color:#498af2;
-	text-decoration:none;
-}
-#info5{
-	margin-top:30px;
-	font-size:13px;
-	font-family: 'Open Sans', sans-serif;
-	color:#87898b;
-	font-weight:bold;
+.flipper-container {
+  text-align: center;
+  margin-top: 40px;
+  @include perspective(1000);
 }
 
-#logo2{
-	
-	margin-top:10px;
-	height:27px;
-	width:243px;
-}
-#bottom {
-	float:left;
-	padding:0px;
-	margin:0px;
-	
-}
-#bottom ul{
-	list-style: none;
-	
-}
-#bottom ul li{
-	float:left;
-	margin-left:20px;
-     
-	
+.flipper {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  font-family: 'Montserrat', arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  width: 11em; height: 4.5em;
+  background-color: $dark;
+  box-shadow: 0 3px 5px $dark;
+  @include transition(all 0.6s cubic-bezier(0.37, 0.74, 0.15, 1.65));
+  @include transform-style(preserve-3d);
+  
+   &:target {
+    @include transform(rotateX(90deg), translateZ(50%));
+  }
 }
 
+.front-face, .back-face {
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  padding-right: 70px;
+  letter-spacing: 2px;
+  line-height: 4.5em;
+  @include border-radius(2px);
+  @include backface-visibility(hidden);
+  
+  &:before {
+    content: attr(data-icon);
+    font-size: 30px;
+    position: absolute;
+    top: 0; right: 0;
+    height: 100%; width: 70px;
+    border-radius: 0 2px 2px 0;
+  }
+}
+
+.front-face {
+  background-color: $pink;
+  color: #fff;
+  text-shadow: 0 1px 1px darken($pink, 20%);
+  @include transform(rotateX(0deg)translateZ(2.25em));
+   
+  &:before {
+    @include background-image(linear-gradient(45deg,       $pink-d 0%, #eb1f56 50%, #f91858 50%, $pink));
+  }
+  
+}
+
+.back-face {
+  background-color: $green;
+  color: $green-d; 
+  @include transform(rotateX(-90deg)translateZ(2.25em));
+  
+  &:before {
+    @include background-image(linear-gradient(45deg,       $green-d 0%, #76bc42 50%, #7dbd4c 50%, $green));
+  }
+}
 </style>
 	</head>
 	<body>
-	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-73364464-1', 'auto');
-  ga('send', 'pageview');
+<a href="#id" class="flipper-container">
+  <div id="id" class="flipper">
+    <div class="front-face" data-icon="&#x27a3;"><span data-hover="Clicked">Click Me</span></div>
+    <div class="back-face" data-icon="&#10003;">Thank You</div>
+  </div>
+</a>
 
-</script>
-		<center><div class="base">
-			<div id="logo">
-				<img src="http://www.coderglass.com/social/demo/gmail-style-login-page/logo.png" width="118" height="38" />
-			</div>
-			<div id="info1">
-				One account. All of Google.
-			</div>
-			<div id="info2">
-				Sign in to continue to Gmail
-			</div>
-			<div id="form1">
-				<div id="form-img">
-				<img src="http://www.coderglass.com/social/demo/gmail-style-login-page/profile-img.png" width="99" height="99" />
-			    </div>
-				<div id="mailbox">
-					<input placeholder="Enter your email" type="mail" name="name" style="width:270px; height:42px; border: solid 1px #c2c4c6; font-size:16px; padding-left:8px;" />
-				</div>
-				<div>
-				   <input type="submit" id="button2" value="Next" />
-				</div>
-				<div id="info3">
-				   Need help
-			    </div>
-			</div>
-			<div id="info4">
-				    Create account
-			</div>
-			<div id="info5">
-				    One Google Account for everything Google
-			</div>
-			<div>
-			    <img src="http://www.coderglass.com/social/demo/gmail-style-login-page/footer-logo.png" id="logo2" />
-			</div>
-			
-			
-			<div id="bottom">
-				<ul >
-					<li>&copy; www.coderglass.com</li>
-					<li>Designed by Varun Singh </li>
-					
-				</ul>
-			</div>
-		
-		</div>
-		</center>
+
 	</body>
 	
 </html>
